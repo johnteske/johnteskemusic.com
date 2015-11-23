@@ -1,0 +1,18 @@
+# Use PHP5.4 as default
+AddHandler application/x-httpd-php54 .php
+
+RewriteEngine On
+RewriteRule ^(.*)\.html$ $1.php [L]
+
+# johnt.es/ke/ redirects to johnteskemusic.com/ke/
+# the following links redirect from there
+
+Redirect 301 /ke/bass-trailer/ /bass-trailer/
+
+Redirect 301 /ke/facebook/ https://www.facebook.com/johnteskemusic
+Redirect 301 /ke/fb/ https://www.facebook.com/johnteskemusic
+
+Redirect 301 /ke/ /
+Redirect 301 /ke /
+
+# RedirectMatch 301 /ke/(.*) //$1
