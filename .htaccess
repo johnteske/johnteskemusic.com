@@ -12,7 +12,4 @@ Redirect 301 /ke/bass-trailer/ /bass-trailer/
 Redirect 301 /ke/facebook/ https://www.facebook.com/johnteskemusic
 Redirect 301 /ke/fb/ https://www.facebook.com/johnteskemusic
 
-Redirect 301 /ke/ /
-Redirect 301 /ke /
-
-# RedirectMatch 301 /ke/(.*) //$1
+RedirectMatch 301 /ke/?$ //$1
