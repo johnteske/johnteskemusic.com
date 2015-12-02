@@ -15,9 +15,11 @@
 <!-- 							John graduated from the University of Washington, where he studied with Jo&euml;l-Fran&ccedil;ois Durand, Juan Pampin, and Josh Parmenter.
  -->
 						</p>
+<!--
 						<p>
 						<a id="bio-but" class="button" href="">Full bio + CV</a>
 						</p>
+-->
 
 					</section>
 					<figure class="4u$ not-small">
