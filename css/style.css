@@ -840,6 +840,7 @@
 	#banner-wrapper
 	{
 		background-size: cover;
+		background-color: #111;
 	}
 
 		#banner-wrapper:before,
