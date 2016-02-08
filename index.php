@@ -19,20 +19,68 @@
 						</p>
 					</div>
 
-					<div class="6u 12u$(2) 12u$(3)">
-<!-- 				<div class="4u 6u(2) 12u$(3)"> -->
-						<header>
-	 					<h2>Featured Work</h2>
-						</header>
-						<div class="embed">
-							<iframe src="http://player.vimeo.com/video/103194193?byline=0&amp;portrait=0&amp;color=B3B3B3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-						</div>
-					</div>
-<!--
-					<div class="4u 6u(2) 12u$(3)">
-					</div>
--->
+<?php
+	$showevents = 'featured';
+	include 'performances/json-crunch.php';
+
+	function home_json_perf($date, $perf) {
+		echo "
+			<div class='12u'>
+				<header>
+				<h3>";
+				if( $perf['url']) { echo "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">"; }
+					echo $date . " | " . $perf['title'];
+				if( $perf['url']) { echo "</a>"; }
+				echo "</h3>
+				</header>
+				<section>
+					<p>" . $perf['short'] . "</p>
+				</section>
+			</div>
+		";
+	}
+
+	function display_home($file_list) {
+		// $current_year = "";
+		// foreach($file_list as $file) // only display first
+		// {							// only display first
+		$file = $file_list[0];
+			$perf = get_json($file);
+			if($perf) { // skip if error, won't break page
+				$end = $perf['endDate'];
+				list ($date, $date_year) = extract_date($file, $end);
+				// if ($date_year != $current_year) { echo "<h3>" . $date_year . "</h3>"; }
+				// $current_year = $date_year;
+				// if($display == 'full') {
+					home_json_perf($date, $perf); //}
+				// elseif($display == 'short') {
+					// short_json_perf($date, $perf); }
+			}
+		// } 							// only display first
+	}
+
+	if(count($upcoming_json) > 0) {
+		echo "<div class='6u 12u$(2) 12u$(3)'>";
+		echo "<h2><a href='performances/'>Upcoming</a></h2>"; // put within if statement: if display and events > 0
+		display_home($upcoming_json);
+		echo "</div>";
+	}
+	else {
+		echo "
+			<div class='6u 12u$(2) 12u$(3)'>
+			<!-- <div class='4u 6u(2) 12u$(3)'> -->
+				<header>
+					<h2>Featured Work</h2>
+				</header>
+				<div class='embed'>
+					<iframe src='http://player.vimeo.com/video/103194193?byline=0&amp;portrait=0&amp;color=B3B3B3' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
+			</div>
+		";
+	}
+
+ ?>
+				</div><!-- end row -->
 <script>
 	$(window).scroll(function() {
 	    if ($(document).scrollTop() > 85 && !(skel.isActive('medium')))
