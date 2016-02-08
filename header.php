@@ -6,7 +6,7 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/jquery.min.js"></script>
 		<script src="/js/skel.min.js"></script>
 		<script src="/js/skel-layers.min.js"></script>
 		<script src="/js/init.js"></script>
@@ -19,7 +19,7 @@
 		  ga('create', 'UA-8930161-1', 'auto');
 		  ga('send', 'pageview');
 
-		</script>		
+		</script>
 		<noscript>
 			<link rel="stylesheet" href="/css/skel.css" />
 			<link rel="stylesheet" href="/css/style.css" />
@@ -31,7 +31,7 @@
 			<div id="banner">
 				<div id="logo">
 					<a href="#main">
-						<h2><?php echo $title; ?></h2><?php if ($class == 'home'): ?><p>composer</p><?php endif?> 
+						<h2><?php echo $title; ?></h2><?php if ($class == 'home'): ?><p>composer</p><?php endif?>
 					</a>
 				</div>
 			</div>
