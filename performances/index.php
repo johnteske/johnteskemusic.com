@@ -1,164 +1,150 @@
 <?php
 	$title = 'Performances';
 	$class = 'perf';
-	include '../header.php';?>
+	include '../header.php';
+	?>
 <!-- content -->
 <?php
-	$upcoming = array();
-	$past = array();
 
-	$showevents = !empty($_GET['events']) ? $_GET['events'] : 'all';
+	$showevents = !empty($_GET['events']) ? $_GET['events'] : 'featured';
 	$showupcoming = !empty($_GET['upcoming']) ? $_GET['upcoming'] : 'full';
 	$showpast = !empty($_GET['past']) ? $_GET['past'] : 'short';
-//  	echo $_SERVER["QUERY_STRING"];
+	// echo $_SERVER["QUERY_STRING"];
 
-	$today = date('ymd');
-	
+	include 'archive/perf-filter.php'; // for filtering events
+
+	/*
+		Treat "today" marker as tomorrow, as to not hide current shows.
+		"Current" depends on performance time zone and time zone of viewer,
+		which could be up to 24 hours.
+	*/
+	$today = date('ymd', strtotime('+1 days'));
+
 	if ($showevents == 'featured') {
-		$files = glob('../*.perf');
+		$json_files = glob('*.json');
 	}
 	elseif ($showevents == 'archive') {
-		$files = glob('*.perf');
+		$json_files = glob('archive/*.json'); //
 	}
 	else { // 'all': featured + archive
-		$files = array_merge( glob('*.perf'), glob('../*.perf') );
+		$json_files = array_merge( glob('*.json'), glob('archive/*.json') );
 	}
 
-	//rsort($files); // could work for featured only
-	function cmp($a, $b) { return strcasecmp( basename($b), basename($a) ); }
-	usort($files, "cmp"); // to maintain featured + archive file paths
-	
-	foreach($files as $item)
-	{
-		$filedate = basename($item);
-//		$filedate = basename($item, ".perf");
-	    if ( $today > $filedate ) {
-	       array_push($past, $item);
-// 	       echo "past" . "<br />";
-	    } else {
-			// better is I could pop from original array and push to upcoming
-			// since I'm bound to have far more past events than upcoming
-	    	//array_pop($files, $item);
-	    	//unset( $files[$item] );
-	        array_unshift($upcoming, $item);
-// 	       echo "upcoming" . "<br />";
-    	}
-	};
+	// custom compare, to maintain featured + archive file paths
+	function compare_basenames($a, $b) { return strcasecmp( basename($b), basename($a) ); }
+	usort($json_files, "compare_basenames");
 
-?>
-
-<?php
-	function dateCrunch($file) {
-// 		echo "<p>$file</p>";// just for debug
-		$lines = file($file);
-		$filedate = basename($file, ".perf");
-		$filedate = substr($filedate, 0, 6); // date only, trim notes
-		$startdate = date_create_from_format('ymd', $filedate );
-		$dateyear = $startdate->format('Y');
-		$enddate = trim( $lines[1] );
-		if ( $enddate != "" ) {
-			$enddate = date_create_from_format('y-m-d', $enddate );
-			// at this point, check for same month, day, (year)
-			$startdate = $startdate->format('M j'); 
-			$enddate = $enddate->format('M j');
-			$enddate = "&ndash;".$enddate;
-		}
-		else {
-			$startdate = $startdate->format('M j');
-		}
-		return array ($lines, $startdate, $enddate, $dateyear);
+	function check_future($file) {
+		global $today;
+	    return($today <= basename($file));
 	}
-	
-	function fullPerf($file) {
-		global $curyear;
-		list ($lines, $startdate, $enddate, $dateyear) = dateCrunch($file);
-		// if this event is in a diff year, post the header first
-		if ( $dateyear != $curyear) {
-			echo "<h2 style=\"color: #888; \">" . $dateyear . "</h2>";
-		}
-		$curyear = $dateyear; // save this year to check next date
+	function check_past($file) {
+		global $today;
+	    return($today > basename($file));
+	}
 
+	$upcoming_json = array_filter($json_files, "check_future");
+	sort($upcoming_json); // simple (chronological) sort
+	$past_json = array_filter($json_files, "check_past");
+
+	function extract_date($file, $end_date) {
+		$file_date = basename($file, '.json'); // get filename without extension
+		$file_date = substr($file_date, 0, 6); // keep YYMMDD date, not description
+		$start_date = date_create_from_format('ymd', $file_date);
+		$date = $start_date->format('M j'); // formatted date
+		if($end_date) {
+			$end_date = date_create_from_format('y-m-d', $end_date);
+			if( date("m", $start_date) == date("m", $end_date) ) {
+				$date .= "&ndash;" . $end_date->format('j');
+			}
+			else {
+				$date .= "&ndash;" . $end_date->format('M j');
+			}
+			// also check if same year (would also have to modify start_date) // format('M j, Y')
+		}
+		$date_year = $start_date->format('Y'); // for grouping by year
+		return array ($date, $date_year);
+	}
+
+	function get_json($file) {
+		$contents = file_get_contents($file);
+		// encode utf-8 here?
+		return json_decode($contents, true);
+	}
+
+	function full_json_perf($date, $perf) {
 		echo "
-					<div class=\"row\">
-						<header class=\"2u 3u(2) 12u$(4) date\">
- 							<h3>" . $startdate . $enddate . "</h3>
-							<p>$lines[2]</p>
-						</header>
-						<section class=\"7u$ 9u$(2) 12u$(4)\">
-						<header>
-							<h3>";
-		if( $lines[8] != '') { echo "<a class=\"perf-title\" href=\"$lines[8]\">$lines[3]</a>"; } else { echo $lines[3]; }
-		echo "				</h3>						
-							<p>
-								$lines[4]
-							</p>
-						</header>
-							<p>
-								$lines[5]
-							</p>
-							<p>
-								$lines[6]
-							</p>
-							<p>
-								$lines[7]
-							</p>
-						</section>
-					</div> 
+			<div class=\"row\">
+				<header class=\"2u 3u(2) 12u$(4) date\">
+					<h3>" . $date . "</h3>
+					<p>" . $perf['time'] . "</p>
+				</header>
+				<section class=\"7u$ 9u$(2) 12u$(4)\">
+					<header>
+						<h3>";
+		if( $perf['url'] ) {
+		echo "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">" . $perf['title'] . "</a>";
+		}
+		else { echo $perf['title']; }
+		echo "</h3>
+						<p>" . $perf['short'] . "</p>
+					</header>
+					<p>" . $perf['long'] . "</p>
+					<p>" . $perf['address'] . "</p>
+					<p>" . $perf['price'] . "</p>
+				</section>
+			</div>
 		";
 	}
 
-	function shortPerf($file) {
-		global $curyear;
-		list ($lines, $startdate, $enddate, $dateyear) = dateCrunch($file);
-		if ( $dateyear != $curyear) {
-			echo "<h3 style=\"color: #888; \">" . $dateyear . "</h3>";
-		}
-		$curyear = $dateyear; // save this year to check next date
-
+	function short_json_perf($date, $perf) {
 		echo "
-					<div class=\"row\">
-						<header class=\"2u 3u(2) 12u$(4) date\">
- 							<h4>" . $startdate . $enddate . "</h4>
-						</header>
-						<section class=\"7u$ 9u$(2) 12u$(4)\">
-						<header>
-							<h4>";
-		if( $lines[8] != '') { echo "<a class=\"perf-title\" href=\"$lines[8]\">$lines[3]</a>"; } else { echo $lines[3]; }
-		echo "				</h4>						
-						</header>
-						</section>
-					</div> 
+			<div class=\"row\">
+				<header class=\"2u 3u(2) 12u$(4) date\">
+					<h4>" . $date . "</h4>
+				</header>
+				<section class=\"7u$ 9u$(2) 12u$(4)\">
+					<header>
+						<h4>";
+		if( $perf['url']) { echo "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">" . $perf['title'] . "</a>"; } else { echo $perf['title']; }
+		echo "</h4>
+					</header>
+				</section>
+			</div>
 		";
 	}
-	
-	// do the loop
-	$curyear = 0;
-	if ($showupcoming != 'none' && sizeof($upcoming) > 0) { // also checks if any upcoming shows
-		echo "<h2>Upcoming</h2>";
-		foreach ($upcoming as $file_num => $file):
-			if($showupcoming == 'full') {
-				fullPerf($file);
+
+	function display_dates($file_list, $display) {
+		$current_year = "";
+		foreach($file_list as $file)
+		{
+			$perf = get_json($file);
+			if($perf) { // skip if error, won't break page
+				$end = $perf['endDate'];
+				list ($date, $date_year) = extract_date($file, $end);
+				if ($date_year != $current_year) { echo "<h3>" . $date_year . "</h3>"; }
+				$current_year = $date_year;
+				if($display == 'full') {
+					full_json_perf($date, $perf); }
+				elseif($display == 'short') {
+					short_json_perf($date, $perf); }
 			}
-			elseif($showupcoming == 'short') {
-				shortPerf($file);
-			}
-		endforeach;
+		}
 	}
-	// do the loop
-	$curyear = 0;
-	if ($showpast != 'none') {
-	echo "<h2>Past Performances</h2>";
-		foreach ($past as $file_num => $file):
-			if($showpast == 'full') {
-				fullPerf($file);
-			}
-			elseif($showpast == 'short') {
-				shortPerf($file);
-			}
-		endforeach;
+
+	if($upcoming_json) {
+		echo "<h2>Upcoming</h2>"; // put within if statement: if display and events > 0
+		display_dates($upcoming_json, $showupcoming);
 	}
+
+	if($past_json) {
+		// "Recent" until more dates and "see more" can be added
+		echo "<h2>Recent Past Performances</h2>"; // put within if statement: if display and events > 0
+		display_dates($past_json, $showpast);
+	}
+
 ?>
-				</div> <!-- upcoming -->
+
 <!-- content -->
 <?php $photo = 'Photo by Blake Bumpus.';
 	include '../footer.php';?>
