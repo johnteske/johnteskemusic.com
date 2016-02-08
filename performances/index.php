@@ -11,7 +11,7 @@
 	$showpast = !empty($_GET['past']) ? $_GET['past'] : 'short';
 	// echo $_SERVER["QUERY_STRING"];
 
-	include 'archive/perf-filter.php'; // for filtering events
+	// include 'archive/perf-filter.php'; // for filtering events
 
 	/*
 		Treat "today" marker as tomorrow, as to not hide current shows.
