@@ -33,7 +33,9 @@
 		{
 			$work = get_json($file);
 			if($work) { // skip if error, won't break page
-				echo '<div class="1u 2u(3)">' . 'YEAR' . '</div>';
+				$file_date = basename($file, '.json'); // get filename without extension
+				$file_date = substr($file_date, 0, 4); // keep date
+				echo '<div class="1u 2u(3)">' . $file_date . '</div>';
 				echo '<div class="3u 4u(3) 5u(4) title">';
 				// echo '<a href="#">';
 				echo $work['title'];
