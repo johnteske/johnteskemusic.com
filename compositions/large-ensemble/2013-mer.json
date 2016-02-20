@@ -1,0 +1,15 @@
+{
+    "title": "mer",
+    "instrumentation": {
+        "short": "chamber orchestra",
+        "long": "4,4,ETC"
+    },
+    "duration": {
+        "minutes": "45"
+    },
+    "links": {
+        "audio": "#",
+        "video": "#",
+        "score": "#"
+    }
+}

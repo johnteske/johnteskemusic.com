@@ -15,11 +15,72 @@
 	$link3 = $link2;
 	$link4 = $link2;
 ?>
+<?php
+	// same as compositions
+	function get_json($file) {
+		$contents = file_get_contents($file);
+		// encode utf-8 here?
+		return json_decode($contents, true);
+	}
 
+	$json_files = glob('large-ensemble/*.json');
+	// print_r($json_files);
+
+	function display_works($file_loc) {
+		$file_list = glob($file_loc . '/*.json');
+		// $current_year = "";
+		foreach($file_list as $file)
+		{
+			$work = get_json($file);
+			if($work) { // skip if error, won't break page
+				echo '<div class="1u 2u(3)">' . 'YEAR' . '</div>';
+				echo '<div class="3u 4u(3) 5u(4) title">';
+				// echo '<a href="#">';
+				echo $work['title'];
+				// echo '</a>';
+				echo '</div>';
+				echo '<div class="3u 4u(3) 5u(4)">' . $work['instrumentation']['short'] . '<br />' .
+					'<span id="full-inst" style="display: initial; min-height:0;">' . $work['instrumentation']['long'] . '</span>' .
+				'</div>';
+				echo '<div class="1u 2u(3) not-xsmall">';
+					if($work['duration']['minutes']){echo $work['duration']['minutes'] . '&prime;';}
+					if($work['duration']['seconds']){echo $work['duration']['seconds'] . '&Prime;';}
+				echo '</div>';
+				echo '<div class="1u 2u(3) -2u(3) not-small">';
+					if($work['links']['audio']){echo '<a href="' . $work['links']['audio'] . '">audio</a>';}
+				echo '</div>';
+				echo '<div class="1u 2u(3) not-small">' ;
+					if($work['links']['audio']){echo '<a href="' . $work['links']['video'] . '">video</a>';}
+				echo '</div>';
+				echo '<div class="1u 2u(3) not-small">' ;
+					if($work['links']['score']){echo '<a href="' . $work['links']['score'] . '">score</a>';}
+				echo '</div>';
+				// echo '<div class="1u 2u(3) not-small">' .
+				// 	'<a href="#">listen</a>' .
+				// '</div>';
+			}
+		}
+	}
+?>
+<section class="complist">
+	<header>
+		<!-- <h3>Large Ensemble</h3> -->
+		<h2>Large Ensemble</h2>
+		<p>7+ players</p>
+	</header>
+	<div class="year">
+		<div class="row piece">
+			<?php display_works('large-ensemble/'); ?>
+		</div>
+	</div>
+</section>
+<!--  -->
+<!--  -->
+<!--  -->
 				<div class="row">
 					<div class="12u$">
 	 					<h2>Featured Works</h2>
-					</div>					
+					</div>
 					<div class="6u 12u$(2) 12u$(3)">
 <!-- 						<header>
 							<h2><em>facets</em></h2>
@@ -40,7 +101,7 @@
 					</div>
 				</div>
 
-<!-- 
+<!--
 				<div class="row">
 					<div class="4u 12u$(2) 12u$(3)">
 						<header>
@@ -67,7 +128,7 @@
 					</div>
 				</div>
  -->
-<!-- 
+<!--
 				<p id="bio-but" class="button">Full instrumentation</p>
 				<script>
 					$( "#bio-but" ).click(function() {
@@ -81,9 +142,9 @@
 					});
 				</script>
  -->
- 				<h2>All Works</h2>
+ 				<!-- <h2>All Works</h2> -->
  				<!-- <p>click to see inst</p> -->
- 				<section class="complist">	
+ 				<section class="complist">
 					<header>
 						<!-- <h3>Large Ensemble</h3> -->
 						<h2>Large Ensemble</h2>
@@ -240,7 +301,7 @@
 						</div>
 					</div>
 				</section>
- 				<section class="complist">	
+ 				<section class="complist">
 					<header>
 						<h2>Any Ensemble</h2>
 					</header>
@@ -423,7 +484,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="complist">	
+				<section class="complist">
 					<header>
 						<h2>Small Ensemble</h2>
 						<p>2&ndash;6 players</p>
@@ -689,7 +750,7 @@
 						</div>
 					</div>
 				</section>
- 				<section class="complist">	
+ 				<section class="complist">
 					<header>
 						<h2>Solo</h2>
 					</header>
@@ -841,7 +902,7 @@
 					</div>
 				</section>
 
- 				<section class="complist">	
+ 				<section class="complist">
 					<header>
 						<h2>Electroacoustic and Sound Design</h2>
 						<!-- <p></p> -->
@@ -908,7 +969,7 @@
 					</div>
 				</section>
 
- 				<section class="complist">	
+ 				<section class="complist">
 					<header>
 						<h2>Collaborations</h2>
 					</header>
@@ -1034,20 +1095,20 @@
 					</div>
 				</section>
 
-<!-- 				<section>	
+<!-- 				<section>
 					<header>
 						<h2>Discography</h2>
 					</header>
 				</section>
- --><!-- 
-Space Weather Listening Booth (2013) 
-Our Century 21 (2012) 
-Embers of Discontent (2012) 
-wheel (2011) 
-Honeymoon (2011) 
-Unused Lexical Variable (2008) 
+ --><!--
+Space Weather Listening Booth (2013)
+Our Century 21 (2012)
+Embers of Discontent (2012)
+wheel (2011)
+Honeymoon (2011)
+Unused Lexical Variable (2008)
  -->
-				<section>	
+				<section>
 					<header>
 						<h2>More recordings</h2>
 					</header>
