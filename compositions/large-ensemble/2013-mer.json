@@ -2,10 +2,10 @@
     "title": "mer",
     "instrumentation": {
         "short": "chamber orchestra",
-        "long": "4,4,ETC"
+        "long": "1,1,1,1-1,,,,,6/6/4/3/2"
     },
     "duration": {
-        "minutes": "45"
+        "minutes": 45
     },
     "links": {
         "audio": "#",

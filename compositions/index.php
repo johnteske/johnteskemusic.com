@@ -28,13 +28,16 @@
 
 	function display_works($file_loc) {
 		$file_list = glob($file_loc . '/*.json');
-		// $current_year = "";
+		rsort($file_list);
+		$current_year = "";
 		foreach($file_list as $file)
 		{
 			$work = get_json($file);
 			if($work) { // skip if error, won't break page
 				$file_date = basename($file, '.json'); // get filename without extension
 				$file_date = substr($file_date, 0, 4); // keep date
+				// if ($file_date != $current_year) { echo '<div class="year">'; }
+				echo '<div class="row piece">';
 				echo '<div class="1u 2u(3)">' . $file_date . '</div>';
 				echo '<div class="3u 4u(3) 5u(4) title">';
 				// echo '<a href="#">';
@@ -60,6 +63,9 @@
 				// echo '<div class="1u 2u(3) not-small">' .
 				// 	'<a href="#">listen</a>' .
 				// '</div>';
+				echo '</div>';
+				// if ($file_date != $current_year) { echo '</div>'; }
+				$current_year = $file_date;
 			}
 		}
 	}
@@ -71,9 +77,9 @@
 		<p>7+ players</p>
 	</header>
 	<div class="year">
-		<div class="row piece">
+		<!-- <div class="row piece"> -->
 			<?php display_works('large-ensemble/'); ?>
-		</div>
+		<!-- </div> -->
 	</div>
 </section>
 <!--  -->
