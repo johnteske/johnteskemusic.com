@@ -1189,20 +1189,29 @@ section.complist div.year > div {
     padding-bottom: 0.25em;
 }
 
-/* year dividers */
-section.complist div.year {
-    border-bottom: 1px #eee solid;
+/* year dividers section.complist div.year*/
+section.complist div.piece {
+    border-top: 1px #eee solid;
 }
-section.complist div.year:last-child {
-    border-bottom: 0;
+
+/*section.complist div.year:last-child*/
+section.complist div.piece:first-child {
+    border-top: 0;
+}
+
+section.complist div.sameyear {
+	border-top: 0;
+}
+section.complist div.sameyear > div:first-child {
+	opacity: 0; /* hide it same year */
 }
 
 /* only show year once */
 section.complist div.year div.piece > div:first-child {
-    opacity: 0;
+    /*opacity: 0;*/
 }
 section.complist div.year div.piece:first-child > div:first-child {
-	opacity: 1.0;
+	/*opacity: 1.0;*/
 }
 
 .title,

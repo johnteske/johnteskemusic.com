@@ -37,16 +37,20 @@
 				$file_date = basename($file, '.json'); // get filename without extension
 				$file_date = substr($file_date, 0, 4); // keep date
 				// if ($file_date != $current_year) { echo '<div class="year">'; }
-				echo '<div class="row piece">';
-				echo '<div class="1u 2u(3)">' . $file_date . '</div>';
+				if ($file_date != $current_year) { echo '<div class="row piece">'; } else { echo '<div class="row piece sameyear">'; }
+				echo '<div class="1u 2u(3)">';
+				// if ($file_date != $current_year) { echo $file_date; } else { echo '&nbsp;'; }
+				echo $file_date;
+				echo '</div>';
 				echo '<div class="3u 4u(3) 5u(4) title">';
 				// echo '<a href="#">';
 				echo $work['title'];
 				// echo '</a>';
 				echo '</div>';
-				echo '<div class="3u 4u(3) 5u(4)">' . $work['instrumentation']['short'] . '<br />' .
-					'<span id="full-inst" style="display: initial; min-height:0;">' . $work['instrumentation']['long'] . '</span>' .
-				'</div>';
+				echo '<div class="3u 4u(3) 5u(4)">' . $work['instrumentation']['short'];
+				// echo '<br />' .
+				// 	'<span id="full-inst" style="display: initial; min-height:0;">' . $work['instrumentation']['long'] . '</span>';
+				echo '</div>';
 				echo '<div class="1u 2u(3) not-xsmall">';
 					if($work['duration']['minutes']){echo $work['duration']['minutes'] . '&prime;';}
 					if($work['duration']['seconds']){echo $work['duration']['seconds'] . '&Prime;';}
