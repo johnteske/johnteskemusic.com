@@ -87,6 +87,13 @@
 	</header>
 	<?php display_works('any-ensemble/'); ?>
 </section>
+<section class="complist">
+	<header>
+		<h2>Small Ensemble</h2>
+		<p>2&ndash;6 players</p>
+	</header>
+	<?php display_works('small-ensemble/'); ?>
+</section>
 <!--  -->
 <!--  -->
 <!--  -->
