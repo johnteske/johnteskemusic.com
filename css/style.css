@@ -1184,7 +1184,8 @@ section.complist {
 	margin-bottom: 2em;
 }
 
-section.complist div.year > div {
+/*section.complist div.year > div*/
+section.complist div.piece {
     padding-top: 0.25em;
     padding-bottom: 0.25em;
 }
@@ -1195,7 +1196,7 @@ section.complist div.piece {
 }
 
 /*section.complist div.year:last-child*/
-section.complist div.piece:first-child {
+section.complist div.piece:first-of-type {
     border-top: 0;
 }
 

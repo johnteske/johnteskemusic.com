@@ -76,15 +76,10 @@
 ?>
 <section class="complist">
 	<header>
-		<!-- <h3>Large Ensemble</h3> -->
 		<h2>Large Ensemble</h2>
 		<p>7+ players</p>
 	</header>
-	<div class="year">
-		<!-- <div class="row piece"> -->
-			<?php display_works('large-ensemble/'); ?>
-		<!-- </div> -->
-	</div>
+	<?php display_works('large-ensemble/'); ?>
 </section>
 <!--  -->
 <!--  -->
