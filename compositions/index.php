@@ -81,6 +81,12 @@
 	</header>
 	<?php display_works('large-ensemble/'); ?>
 </section>
+<section class="complist">
+	<header>
+		<h2>Any Ensemble</h2>
+	</header>
+	<?php display_works('any-ensemble/'); ?>
+</section>
 <!--  -->
 <!--  -->
 <!--  -->
