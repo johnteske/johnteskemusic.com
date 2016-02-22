@@ -106,6 +106,12 @@
 	</header>
 	<?php display_works('electroacoustic/'); ?>
 </section>
+<section class="complist">
+	<header>
+		<h2>Collaborations</h2>
+	</header>
+	<?php display_works('collaborations/'); ?>
+</section>
 
 <!--  -->
 <!--  -->
