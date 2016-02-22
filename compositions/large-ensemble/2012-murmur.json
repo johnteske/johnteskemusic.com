@@ -6,5 +6,9 @@
 	},
 	"duration": {
 		"minutes": 45
-	}
+	},
+	"links": {
+        "audio": "https://johnteske.bandcamp.com/album/murmur",
+        "video": "https://vimeo.com/56737144"
+    }
 }

@@ -6,5 +6,9 @@
 	"duration": {
 		"minutes": 5,
 		"seconds": 30
-	}
+	},
+	"links": {
+        "audio": "https://soundcloud.com/johnteske/ffiinniiss",
+        "video": "https://vimeo.com/47628680"
+    }
 }
