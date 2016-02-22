@@ -1180,6 +1180,14 @@ i.flat:before {	content: '\266D'; }
 
 /* comp */
 
+.comp-link a {
+	color: #888;
+}
+/*.comp-link:hover a,*/
+.comp-link a:hover {
+	color: #01579B;
+}
+
 section.complist {
 	margin-bottom: 2em;
 }

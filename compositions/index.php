@@ -26,15 +26,15 @@
 					echo '<div class="3u 5u(3) title">' . $work['title'] . '</div>';
 					echo '<div class="3u 5u(3)">' . $work['instrumentation']['short'] . '</div>';
 					// '<span id="full-inst" style="display: initial; min-height:0;">' . $work['instrumentation']['long'] . '</span>';
-					echo '<div class="1u not-small">';
+					echo '<div class="2u not-small">';
 						if($work['duration']['minutes']){echo $work['duration']['minutes'] . '&prime;';}
 						if($work['duration']['seconds']){echo $work['duration']['seconds'] . '&Prime;';}
 					echo '</div>';
-					echo '<div class="2u not-small">';
-						if($work['links']['audio']){echo '<a href="' . $work['links']['audio'] . '">audio</a>';}
+					echo '<div class="1u not-small comp-link">';
+						if($work['links']['audio']){echo '<a href="' . $work['links']['audio'] . '"><i class="fa fa-volume-up"></i></a>';}
 					echo '</div>';
-					echo '<div class="2u not-small">' ;
-						if($work['links']['audio']){echo '<a href="' . $work['links']['video'] . '">video</a>';}
+					echo '<div class="1u not-small comp-link">' ;
+						if($work['links']['audio']){echo '<a href="' . $work['links']['video'] . '"><i class="fa fa-youtube-play"></i></a>';}
 					echo '</div>';
 					// echo '<div class="1u 2u(3) not-small">' ;
 					// 	if($work['links']['score']){echo '<a href="' . $work['links']['score'] . '">score</a>';}
@@ -53,12 +53,12 @@
 	<div class="12u$">
 		<h2>Featured Works</h2>
 	</div>
-	<div class="6u 12u$(2) 12u$(3)">
+	<div class="6u 12u$(3)">
 		<div class="embed">
 			<iframe src="http://player.vimeo.com/video/103194193?byline=0&amp;portrait=0&amp;color=B3B3B3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
 	</div>
-	<div class="6u 12u$(2) 12u$(3)">
+	<div class="6u 12u$(3)">
 		<div class="embed">
 			<iframe src="http://player.vimeo.com/video/78482902?byline=0&amp;portrait=0&amp;color=B3B3B3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
