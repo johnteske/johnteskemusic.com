@@ -100,6 +100,13 @@
 	</header>
 	<?php display_works('solo/'); ?>
 </section>
+<section class="complist">
+	<header>
+		<h2>Electroacoustic and Sound Design</h2>
+	</header>
+	<?php display_works('electroacoustic/'); ?>
+</section>
+
 <!--  -->
 <!--  -->
 <!--  -->
