@@ -5,5 +5,9 @@
     },
     "duration": {
         "minutes": 12
+    },
+    "links": {
+        "audio": "https://johnteske.bandcamp.com/track/10-short-piano-pieces",
+        "video": "https://vimeo.com/97137377"
     }
 }

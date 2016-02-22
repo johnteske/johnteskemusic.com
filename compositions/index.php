@@ -29,12 +29,13 @@
 					echo '<div class="2u not-small">';
 						if($work['duration']['minutes']){echo $work['duration']['minutes'] . '&prime;';}
 						if($work['duration']['seconds']){echo $work['duration']['seconds'] . '&Prime;';}
+						echo '&#8203;';
 					echo '</div>';
 					echo '<div class="1u not-small comp-link">';
 						if($work['links']['audio']){echo '<a href="' . $work['links']['audio'] . '"><i class="fa fa-volume-up"></i></a>';}
 					echo '</div>';
 					echo '<div class="1u not-small comp-link">' ;
-						if($work['links']['audio']){echo '<a href="' . $work['links']['video'] . '"><i class="fa fa-youtube-play"></i></a>';}
+						if($work['links']['video']){echo '<a href="' . $work['links']['video'] . '"><i class="fa fa-youtube-play"></i></a>';}
 					echo '</div>';
 					// echo '<div class="1u 2u(3) not-small">' ;
 					// 	if($work['links']['score']){echo '<a href="' . $work['links']['score'] . '">score</a>';}
