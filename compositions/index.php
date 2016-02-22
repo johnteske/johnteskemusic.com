@@ -94,6 +94,12 @@
 	</header>
 	<?php display_works('small-ensemble/'); ?>
 </section>
+<section class="complist">
+	<header>
+		<h2>Solo</h2>
+	</header>
+	<?php display_works('solo/'); ?>
+</section>
 <!--  -->
 <!--  -->
 <!--  -->
