@@ -27,11 +27,11 @@
 		echo "
 			<div class='12u'>
 				<header>
-				<h3>";
+				<h4>";
 				if( $perf['url']) { echo "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">"; }
 					echo $date . " | " . $perf['title'];
 				if( $perf['url']) { echo "</a>"; }
-				echo "</h3>
+				echo "</h4>
 				</header>
 				<section>
 					<p>" . $perf['short'] . "</p>
@@ -42,9 +42,8 @@
 
 	function display_home($file_list) {
 		// $current_year = "";
-		// foreach($file_list as $file) // only display first
-		// {							// only display first
-		$file = $file_list[0];
+		foreach($file_list as $file)
+		{
 			$perf = get_json($file);
 			if($perf) { // skip if error, won't break page
 				$end = $perf['endDate'];
@@ -56,13 +55,13 @@
 				// elseif($display == 'short') {
 					// short_json_perf($date, $perf); }
 			}
-		// } 							// only display first
+		}
 	}
 
 	if(count($upcoming_json) > 0) {
 		echo "<div class='6u 12u$(2) 12u$(3)'>";
-		echo "<h2><a href='performances/'>Upcoming</a></h2>"; // put within if statement: if display and events > 0
-		display_home($upcoming_json);
+		echo "<h2><a href='performances/'>Upcoming</a></h2>";
+		display_home(array_slice($upcoming_json, 0, 2)); // show next TWO performances
 		echo "</div>";
 	}
 	else {
