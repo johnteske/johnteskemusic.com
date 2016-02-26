@@ -28,9 +28,11 @@
 			<div class='12u'>
 				<header>
 				<h4>";
-				if( $perf['url']) { echo "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">"; }
+// 				if( $perf['url']) { echo "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">"; }
+				echo "<a class='perf-title' href='/performances/'>";
 					echo $date . " | " . $perf['title'];
-				if( $perf['url']) { echo "</a>"; }
+				echo "</a>";
+// 				if( $perf['url']) { echo "</a>"; }
 				echo "</h4>
 				</header>
 				<section>
