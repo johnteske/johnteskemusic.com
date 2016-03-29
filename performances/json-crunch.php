@@ -5,7 +5,7 @@
 	"Current" depends on performance time zone and time zone of viewer,
 	which could be up to 24 hours.
 */
-$today = date('ymd', strtotime('+1 days'));
+$today = date('ymd', strtotime('-1 days'));
 $perfpath = $_SERVER['DOCUMENT_ROOT'] . '/performances/';
 
 if ($showevents == 'featured') {
