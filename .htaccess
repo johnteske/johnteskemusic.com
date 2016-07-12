@@ -54,6 +54,8 @@ RewriteRule ^(.*)\.html$ $1.php [L]
 # johnt.es/ke/ redirects to johnteskemusic.com/ke/
 # the following links redirect from there
 
+Redirect 301 /ke/forest /performances/forest-show-6/
+
 Redirect 301 /ke/bass-trailer/ /bass-trailer/
 
 Redirect 301 /ke/facebook/ https://www.facebook.com/johnteskemusic
