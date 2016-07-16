@@ -22,7 +22,7 @@ Neil Welch and I present our sixth 'secret forest show' among the trees in Seatt
 
 John will present a version of <em>nomadic patterns</em>, where he leads the performer-audience in an exploratory sonic investigation of the environment.
 
-Neil will present a solo piece, followed by an ensemble piece with
+Neil will present a solo piece, followed by <em>Concepcion Picciotto</em>, with
 Kate Olson, Ivan Arteaga, Evan Smith, Heather Bentley, Aria Peters, David Balatero, John Teske, Janna Webbon, Sarah Pyle, and Jen Gilleran.
 							</p>
 							<p>
@@ -40,6 +40,9 @@ Kate Olson, Ivan Arteaga, Evan Smith, Heather Bentley, Aria Peters, David Balate
 		margin: 0 0 0.5em 0;
 	}
 </style>
+<link rel="stylesheet" href="glob/score.css">
+<link rel="stylesheet" href="glob/styles.css">
+
 <h2>Location and Directions</h2>
 <div class="row centerd">
 	<div class="-4u 4u$">
@@ -66,7 +69,8 @@ Kate Olson, Ivan Arteaga, Evan Smith, Heather Bentley, Aria Peters, David Balate
 	</div>
 	<div class="row centerd">
 		<div class="-4u 4u$">
-			<img src="../forest-show-5/cloud.png" class="image fit">
+	        <svg class="main image fit"></svg>
+<!-- 			<img src="../forest-show-5/cloud.png" class="image fit"> -->
 			<p>Listen to the path.</p>
 		</div>
 	</div>
@@ -114,6 +118,9 @@ Kate Olson, Ivan Arteaga, Evan Smith, Heather Bentley, Aria Peters, David Balate
 		</div>
 	</div>
 </div>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="glob/script.js" charset="utf-8"></script>
+
 <!-- content -->
 <?php $photo = 'Photo by Blake Bumpus.';
 	include '../../footer.php';?>
