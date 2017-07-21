@@ -22,8 +22,7 @@ Neil Welch and I present our sixth 'secret forest show' among the trees in Seatt
 
 John will present a version of <em>nomadic patterns</em>, where he leads the performer-audience in an exploratory sonic investigation of the environment.
 
-Neil will present a solo piece, followed by <em>Concepcion Picciotto</em>, with
-Kate Olson, Ivan Arteaga, Evan Smith, Heather Bentley, Aria Peters, David Balatero, John Teske, Janna Webbon, Sarah Pyle, and Jen Gilleran.
+Neil will present a solo piece, followed by <em>Concepcion Picciotto</em>, for 10 musicians, birds, and orator. Featuring Kate Olson, Ivan Arteaga, Evan Smith, Heather Bentley, Aria Peters, David Balatero, John Teske, Janna Webbon, Sarah Pyle, and Jen Gilleran.
 							</p>
 							<p>
 								Seattle, WA
