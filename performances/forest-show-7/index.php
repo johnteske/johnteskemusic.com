@@ -1,30 +1,35 @@
-<style>
-    body {
-        background-color: #fffcf9;
-        padding: 22px 44px;
-        font-family: 'Courier New', Courier, monospace;
-    }
-    h1 {
-        font-family: 'Times New Roman', serif;
-        font-style: italic;
-        letter-spacing: -0.75px;
-    }
-    div {
-        margin: 0 auto;
-        max-width: 600px;
-    }
-    ol {
-        padding: 0;
-        list-style: none;
-    }
-    li {
-        margin-bottom: 2em;
-    }
-    img {
-        width: 100%;
-    }
-</style>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>shh...</title>
+    <style>
+        body {
+            background-color: #fffcf9;
+            padding: 22px 44px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            letter-spacing: -0.75px;
+        }
+        div {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        ol {
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin-bottom: 2em;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
 <body>
 <div>
     <h1>secret forest show</h1>
@@ -41,7 +46,7 @@
     <ol>
         <li>
             <a href="https://www.google.com/maps/@47.664711,-122.411557,321m/data=!3m1!1e3?hl=en-US">
-                <img src="img/1200/map.png" />
+                <img data-src="img/1200/map.png" />
             </a>
             <p>
                 Starting location:<br />
@@ -50,46 +55,59 @@
             </p>
         </li>
         <li>
-            <img src="img/1200/1.jpg" />
+            <img data-src="img/1200/1.jpg" />
             <p>
                 1. Go to the traffic island with the three large trees near the entrance to the parking lot.
             </p>
         </li>
         <li>
-            <img src="img/1200/2.jpg" />
+            <img data-src="img/1200/2.jpg" />
             <p>
                 2. Notice the trail to the south. Enter.
             </p>
         </li>
         <li>
-            <img src="img/1200/3.jpg" />
+            <img data-src="img/1200/3.jpg" />
             <p>
                 3. At the first fork, take a left.
             </p>
         </li>
         <li>
-            <img src="img/1200/4.jpg" />
+            <img data-src="img/1200/4.jpg" />
             <p>
                 4. Take a right at the T.
             </p>
         </li>
         <li>
-            <img src="img/1200/5.jpg" />
+            <img data-src="img/1200/5.jpg" />
             <p>
                 5. Take the smaller trail forking to the left.
             </p>
         </li>
         <li>
-            <img src="img/1200/6.jpg" />
+            <img data-src="img/1200/6.jpg" />
             <p>
                 6. Take a sharp right.
             </p>
         <li>
-            <img src="img/1200/7.jpg" />
+            <img data-src="img/1200/7.jpg" />
             <p>
                 7. You've arrived.
             </p>
         </li>
     </ol>
 </div>
+<script>
+    function deferImg() {
+        var imgDefer = document.getElementsByTagName('img');
+        for (var i = 0; i < imgDefer.length; i++) {
+            var src = imgDefer[i].getAttribute('data-src');
+            if (src) {
+                imgDefer[i].setAttribute('src', src);
+            }
+        }
+    }
+    window.onload = deferImg;
+</script>
 </body>
+</html>
