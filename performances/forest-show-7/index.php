@@ -20,20 +20,7 @@
     li {
         margin-bottom: 2em;
     }
-    .map-wrapper {
-        position: relative;
-        padding-bottom: 75%;
-        height: 0;
-        overflow: hidden;
-    }
-    .map-wrapper iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    img, iframe {
+    img {
         width: 100%;
     }
 </style>
@@ -53,13 +40,13 @@
     </p>
     <ol>
         <li>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1509.9795835928937!2d-122.4115565738318!3d47.66471069315331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1500435980941" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+            <a href="https://www.google.com/maps/@47.664711,-122.411557,321m/data=!3m1!1e3?hl=en-US">
+                <img src="img/1200/map.png" />
+            </a>
             <p>
                 Starting location:<br />
                 <a href="https://www.google.com/maps/dir//Discovery+Park,+3801+Discovery+Park+Blvd,+Seattle,+WA+98199/@47.657302,-122.4076847,17z/data=!4m15!1m6!3m5!1s0x549015f0e18e409f:0x519842caa4fa6320!2sDiscovery+Park!8m2!3d47.657302!4d-122.405496!4m7!1m0!1m5!1m1!1s0x549015f0e18e409f:0x519842caa4fa6320!2m2!1d-122.405496!2d47.657302">Discovery Park</a>, north parking lot<br />
-                Accessible by bike, <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/033.aspx">bus</a>, car
+                Accessible by bike, <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/033.aspx">Route 33</a>, car
             </p>
         </li>
         <li>
