@@ -5,6 +5,8 @@
 	"Current" depends on performance time zone and time zone of viewer,
 	which could be up to 24 hours.
 */
+date_default_timezone_set('America/Los_Angeles');
+
 $today = date('ymd', strtotime('-1 days'));
 $perfpath = $_SERVER['DOCUMENT_ROOT'] . '/performances/';
 
