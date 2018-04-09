@@ -1,7 +1,9 @@
 <?php
-	$title = 'Compositions';
-	$class = 'comp';
-	include '../header.php';
+	include '../util/include_with.php';
+	include_with('../header.php', array(
+		'title' => 'Compositions',
+		'class' => 'comp'
+	));
 
 	include '../util/get_json.php';
 ?>
@@ -105,6 +107,7 @@
 </section>
 
 <?php
-	$photo = 'Image: still from <em>mer</em>, recorded by Ian Bell';
-	include '../footer.php';
+	include_with('../footer.php', array(
+		'photo' => 'Image: still from <em>mer</em>, recorded by Ian Bell'
+	));
 ?>
