@@ -1,4 +1,5 @@
 <?php
+include '../util/get_json.php';
 
 /*
 	Treat "today" marker as tomorrow, as to not hide current shows.
@@ -55,11 +56,4 @@ function extract_date($file, $end_date) {
 	$date_year = $start_date->format('Y'); // for grouping by year
 	return array ($date, $date_year);
 }
-
-function get_json($file) {
-	$contents = file_get_contents($file);
-	// encode utf-8 here?
-	return json_decode($contents, true);
-}
-
 ?>

@@ -2,16 +2,11 @@
 	$title = 'Compositions';
 	$class = 'comp';
 	include '../header.php';
+
+	include '../util/get_json.php';
 ?>
 
 <?php
-	// TODO create common get_json function?
-	function get_json($file) {
-		$contents = file_get_contents($file);
-		// TODO encode utf-8?
-		return json_decode($contents, true);
-	}
-
 	function display_works($file_loc, $section_title, $section_subtitle) {
 		echo '<section class="complist">' .
 			'<header>' .
