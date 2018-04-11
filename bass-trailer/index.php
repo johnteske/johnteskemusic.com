@@ -1,5 +1,6 @@
 <?php
 include '../util/include_with.php';
+include '../util/press.php';
 
 include_with('../header.php', array(
 	'title' => 'Bass Trailer',
@@ -15,10 +16,13 @@ include_with('../header.php', array(
 		</p>
 
 		<h4>Press</h4>
-		<p>
-			Seattle Times, July 6, 2010<br />
-			<a href="http://seattletimes.nwsource.com/html/thearts/2012267206_haulin06.html"><em>Oh, the places you&rsquo;ll go&mdash;by bike, hauling an enormous double-bass behind you</em></a>
-		</p>
+		<?php
+			$press_path = $_SERVER['DOCUMENT_ROOT'] . '/press/';
+
+			$press_file = $press_path . '100705-bass-trailer.json';
+
+			echo '<p>' . press_html($press_file) . '</p>';
+		?>
 	</section>
 </div>
 <h2>Thank you for support from</h2>
