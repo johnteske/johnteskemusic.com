@@ -1,5 +1,6 @@
 <?php
 	include '../util/include_with.php';
+	include '../util/get_json.php';
 
 	include_with('../header.php', array(
 		'title' => 'Performances',

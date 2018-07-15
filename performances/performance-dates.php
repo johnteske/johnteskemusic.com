@@ -49,7 +49,7 @@ function display_dates($file_list, $display) {
     foreach($file_list as $file) {
         $perf = get_json($file);
         if ($perf) { // skip if error, won't break page
-            $end = $perf['endDate'];
+            $end = array_key_exists('endDate', $perf) ? $perf['endDate'] : NULL;
             list ($date, $date_year) = extract_date($file, $end);
             if ($date_year != $current_year) { echo "<h3>" . $date_year . "</h3>"; }
             $current_year = $date_year;

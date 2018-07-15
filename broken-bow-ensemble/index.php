@@ -1,6 +1,7 @@
 <?php
 	include '../util/include_with.php';
-	// include '../util/get_json.php';
+	include '../util/get_json.php';
+	$showevents = 'featured';
 	include '../performances/json-crunch.php';
 	include '../performances/performance-dates.php';
 

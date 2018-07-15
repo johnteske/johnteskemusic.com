@@ -1,5 +1,5 @@
 <?php
-include '../util/get_json.php';
+// include '../util/get_json.php';
 
 /*
 	Treat "today" marker as tomorrow, as to not hide current shows.
@@ -38,7 +38,7 @@ $upcoming_json = array_filter($json_files, "check_future");
 sort($upcoming_json); // simple (chronological) sort
 $past_json = array_filter($json_files, "check_past");
 
-function extract_date($file, $end_date) {
+function extract_date($file, $end_date = NULL) {
 	$file_date = basename($file, '.json'); // get filename without extension
 	$file_date = substr($file_date, 0, 6); // keep YYMMDD date, not description
 	$start_date = date_create_from_format('ymd', $file_date);
