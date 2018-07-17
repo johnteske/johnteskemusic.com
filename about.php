@@ -14,7 +14,7 @@ include_with('header.php', array(
 	</header>
 	<section class="8u 12u$(3)">
 		<p>
-			<?php echo get_json('bio.json')[long] ?>
+			<?php echo get_json('bio.json')['long'] ?>
 		</p>
 	</section>
 	<figure class="4u$ not-small">
