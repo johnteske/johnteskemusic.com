@@ -1,11 +1,14 @@
 <?php
 
-function perf_title($title, $url) {
-    if ($url) {
-        $title = "<a class=\"perf-title\" href=\"" . $url . "\">" . $title . "</a>";
-    }
+function perf_title($perf) {
+    return array_key_exists('url', $perf) ?
+        "<a class=\"perf-title\" href=\"" . $perf['url'] . "\">" . $perf['title'] . "</a>" :
+        $perf['title'];
+}
 
-    return $title;
+function maybe($key, $array) {
+    return array_key_exists("$key", $array) ? $array["$key"] : '';
+    // return array_key_exists("$key", $array) && $array["$key"];
 }
 
 function full_json_perf($date, $perf) {
@@ -13,16 +16,16 @@ function full_json_perf($date, $perf) {
         <div class=\"row\">
             <header class=\"2u 3u(2) 12u$(4) date\">
                 <h3>" . $date . "</h3>
-                <p>" . $perf['time'] . "</p>
+                <p>" . maybe('time', $perf) . "</p>
             </header>
             <section class=\"7u$ 9u$(2) 12u$(4)\">
                 <header>
-                    <h3>" . perf_title($perf['title'], $perf['url']) . "</h3>
-                    <p>" . $perf['short'] . "</p>
+                    <h3>" . perf_title($perf) . "</h3>
+                    <p>" . maybe('short', $perf) . "</p>
                 </header>
-                <p>" . $perf['long'] . "</p>
-                <p>" . $perf['address'] . "</p>
-                <p>" . $perf['price'] . "</p>
+                <p>" . maybe('long', $perf) . "</p>
+                <p>" . maybe('address', $perf) . "</p>
+                <p>" . maybe('price', $perf) . "</p>
             </section>
         </div>
     ";
@@ -36,7 +39,7 @@ function short_json_perf($date, $perf) {
             </header>
             <section class=\"7u$ 9u$(2) 12u$(4)\">
                 <header>
-                    <h4>" . perf_title($perf['title'], $perf['url']) . "</h4>
+                    <h4>" . perf_title($perf) . "</h4>
                 </header>
             </section>
         </div>
