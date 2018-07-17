@@ -52,7 +52,6 @@ include_with('header.php', array(
 	$contactsItems = array(
 		array('http://twitter.com/johnteske', 'twitter', '@johnteske'),
 		array('http://eepurl.com/c3rmw', 'envelope', 'Email list'),
-		array('https://www.facebook.com/johnteskemusic', 'facebook', 'Facebook Page'),
 		array('http://vimeo.com/johnteske', 'vimeo-square', 'Vimeo'),
 		array('https://soundcloud.com/johnteske', 'soundcloud', 'Soundcloud'),
 		array('http://www.youtube.com/JohnTeske', 'youtube-play', 'YouTube')
