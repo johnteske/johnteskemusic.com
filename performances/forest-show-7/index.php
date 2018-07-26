@@ -10,6 +10,8 @@
             font-family: 'Courier New', Courier, monospace;
         }
         h1 {
+            opacity: 0;
+            transition: opacity 1s;
             font-family: 'Times New Roman', serif;
             font-style: italic;
             letter-spacing: -0.75px;
@@ -17,6 +19,10 @@
         div {
             margin: 0 auto;
             max-width: 600px;
+        }
+        .wrapper {
+            opacity: 0;
+            transition: opacity 1s;
         }
         ol {
             padding: 0;
@@ -33,6 +39,8 @@
 <body>
 <div>
     <h1>secret forest show</h1>
+</div>
+<div class="wrapper">
     <p>
         July 29, 2017, 7:30 pm
     </p>
@@ -99,13 +107,22 @@
 </div>
 <script>
     function deferImg() {
-        var imgDefer = document.getElementsByTagName('img');
-        for (var i = 0; i < imgDefer.length; i++) {
-            var src = imgDefer[i].getAttribute('data-src');
+        var h1 = document.getElementsByTagName('h1')[0];
+        var wrapper = document.getElementsByClassName('wrapper')[0];
+
+        h1.innerHTML = 'shh&hellip;';
+        h1.style.opacity = 1;
+
+        var imgs = document.getElementsByTagName('img');
+        for (var i = 0; i < imgs.length; i++) {
+            var src = imgs[i].getAttribute('data-src');
             if (src) {
-                imgDefer[i].setAttribute('src', src);
+                imgs[i].setAttribute('src', src);
             }
         }
+
+        h1.innerHTML = 'secret forest show';
+        wrapper.style.opacity = 1;
     }
     window.onload = deferImg;
 </script>
