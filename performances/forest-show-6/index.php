@@ -55,11 +55,10 @@ Neil will present a solo piece, followed by <em>Concepcion Picciotto</em>, for 1
 </div>
 <div class="forest">
 	<div class="row">
-	<?php
-			$map_directions = 'Begin at the Cowen Park entrance on ' .
-				'<a href="https://goo.gl/maps/XDLt7" target="_blank" title="View on Google maps" style="text-decoration: underline;">' .
-					'NE 61st and Brooklyn Ave NE' .
-				'</a>';
+	<?php $map_directions = 'Begin at the Cowen Park entrance on ' .
+			'<a href="https://goo.gl/maps/XDLt7" target="_blank" title="View on Google maps" style="text-decoration: underline;">' .
+				'NE 61st and Brooklyn Ave NE' .
+			'</a>';
 		?>
 		<?php echo_direction(
 			$map_directions,

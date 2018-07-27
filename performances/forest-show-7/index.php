@@ -1,3 +1,6 @@
+<?php
+	require '../forest-show-2.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +14,7 @@
         }
         h1 {
             opacity: 0;
-            transition: opacity 1s;
+            transition: opacity 3s;
             font-family: 'Times New Roman', serif;
             font-style: italic;
             letter-spacing: -0.75px;
@@ -22,7 +25,7 @@
         }
         .wrapper {
             opacity: 0;
-            transition: opacity 1s;
+            transition: opacity 2s 1s;
         }
         ol {
             padding: 0;
@@ -62,47 +65,34 @@
                 Accessible by bike, <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/033.aspx">Route 33</a>, car
             </p>
         </li>
-        <li>
-            <img data-src="img/1200/1.jpg" />
-            <p>
-                1. Go to the traffic island with the three large trees near the entrance to the parking lot.
-            </p>
-        </li>
-        <li>
-            <img data-src="img/1200/2.jpg" />
-            <p>
-                2. Notice the trail to the south. Enter.
-            </p>
-        </li>
-        <li>
-            <img data-src="img/1200/3.jpg" />
-            <p>
-                3. At the first fork, take a left.
-            </p>
-        </li>
-        <li>
-            <img data-src="img/1200/4.jpg" />
-            <p>
-                4. Take a right at the T.
-            </p>
-        </li>
-        <li>
-            <img data-src="img/1200/5.jpg" />
-            <p>
-                5. Take the smaller trail forking to the left.
-            </p>
-        </li>
-        <li>
-            <img data-src="img/1200/6.jpg" />
-            <p>
-                6. Take a sharp right.
-            </p>
-        <li>
-            <img data-src="img/1200/7.jpg" />
-            <p>
-                7. You've arrived.
-            </p>
-        </li>
+        <?php echo_direction(
+            '1. Go to the traffic island with the three large trees near the entrance to the parking lot.',
+            'img/1200/1.jpg'
+        ) ?>
+        <?php echo_direction(
+            '2. Notice the trail to the south. Enter.',
+            'img/1200/2.jpg'
+        ) ?>
+        <?php echo_direction(
+            '3. At the first fork, take a left.',
+            'img/1200/3.jpg'
+        ) ?>
+        <?php echo_direction(
+            '4. Take a right at the T.',
+            'img/1200/4.jpg'
+        ) ?>
+        <?php echo_direction(
+            '5. Take the smaller trail forking to the left.',
+            'img/1200/5.jpg'
+        ) ?>
+        <?php echo_direction(
+            '6. Take a sharp right.',
+            'img/1200/6.jpg'
+        ) ?>
+        <?php echo_direction(
+            '7. You\'ve arrived.',
+            'img/1200/7.jpg'
+        ) ?>
     </ol>
 </div>
 <script>
@@ -110,7 +100,7 @@
         var h1 = document.getElementsByTagName('h1')[0];
         var wrapper = document.getElementsByClassName('wrapper')[0];
 
-        h1.innerHTML = 'shh&hellip;';
+        // h1.innerHTML = 'shh&hellip;';
         h1.style.opacity = 1;
 
         var imgs = document.getElementsByTagName('img');
@@ -121,7 +111,7 @@
             }
         }
 
-        h1.innerHTML = 'secret forest show';
+        // h1.innerHTML = 'secret forest show';
         wrapper.style.opacity = 1;
     }
     window.onload = deferImg;
