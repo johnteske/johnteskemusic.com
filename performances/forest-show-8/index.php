@@ -59,6 +59,10 @@
         Neil Welch and John Teske<br />
         with Samantha Boshnack, Greg Campbell, Ebony, and Noel Kennon.
     </p>
+    <p>
+		John will begin with a text score for any ensemble, with audience participation.
+		Neil will perform a saxophopne solo followed by a new work, <em>100 Mile House</em>.
+    </p>
     <ol>
 		<?php $starting_location = 'We\'ll meet at at the Cowen Park entrance on ' .
 			'<a href="https://goo.gl/maps/XDLt7" target="_blank" title="View on Google maps" style="text-decoration: underline;">' .
