@@ -61,7 +61,7 @@
     </p>
     <p>
 		John will begin with a text score for any ensemble, with audience participation.
-		Neil will perform a saxophopne solo followed by a new work, <em>100 Mile House</em>.
+		Neil will perform a saxophone solo followed by a new work, <em>100 Mile House</em>.
     </p>
     <ol>
 		<?php $starting_location = 'We\'ll meet at at the Cowen Park entrance on ' .
