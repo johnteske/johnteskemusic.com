@@ -57,7 +57,7 @@
     </p>
     <p>
         Neil Welch and John Teske<br />
-        with
+        with Samantha Boshnack, Greg Campbell, Ebony, and Noel Kennon.
     </p>
     <ol>
 		<?php $starting_location = 'We\'ll meet at at the Cowen Park entrance on ' .
