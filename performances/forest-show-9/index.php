@@ -49,7 +49,8 @@
         August 31, 2019, 6:30 pm
     </p>
     <p>
-        Neil Welch and John Teske
+        New graphic scores by Neil Welch and John Teske<br />
+        performed by Neil Welch, John Teske, Haley Freedlund, and Noel Kennon
     </p>
     <p>
         B.Y.O. blanket and bugspray
