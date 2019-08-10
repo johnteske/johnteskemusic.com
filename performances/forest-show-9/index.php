@@ -50,7 +50,12 @@
     </p>
     <p>
         New graphic scores by Neil Welch and John Teske<br />
-        performed by Neil Welch, John Teske, Haley Freedlund, and Noel Kennon
+        performed by
+        Haley Freedlund,
+        Noel Kennon,
+        Evan Smith,
+        John Teske,
+        and Neil Welch
     </p>
     <p>
         B.Y.O. blanket and bugspray
