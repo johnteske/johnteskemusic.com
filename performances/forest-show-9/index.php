@@ -55,7 +55,8 @@
         Noel Kennon,
         Evan Smith,
         John Teske,
-        and Neil Welch
+        Neil Welch,
+        and Evan Woodle
     </p>
     <p>
         B.Y.O. blanket and bugspray
