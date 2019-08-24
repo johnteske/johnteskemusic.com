@@ -23,7 +23,6 @@
 					<div class="4u$ 6u$(2) 12u$(3)">
 						<h3><a href="/about.php#contact">Connect</a></h3>
 						<ul class="alt">
-							<li><a href="http://twitter.com/johnteske">@johnteske</a></li>
 							<li><a href="http://eepurl.com/c3rmw">Email list</a></li>
 							<li><a href="/about.php#contact">Contact</a></li>
 						</ul>
