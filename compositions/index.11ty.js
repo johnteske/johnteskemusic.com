@@ -3,8 +3,9 @@ module.exports = class {
     return { title: "Compositions" };
   }
   render(data) {
-    return Object.keys(data.compositions).map(
-      key => data.compositions[key].title
-    );
+    return `<ul>
+      ${Object.keys(data.compositions)
+        .map(key => `<li>${data.compositions[key].title}</li>`)
+        .join("")}</ul>`;
   }
 };
