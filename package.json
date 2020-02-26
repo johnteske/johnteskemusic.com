@@ -1,0 +1,21 @@
+{
+  "name": "johnteskemusic.com",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "deploy": "gh-pages -d _site",
+    "format": "prettier \"**/*.{js,json,html,md}\" --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnteske/johnteskemusic.com.git"
+  },
+  "author": "John Teske",
+  "license": "MIT",
+  "homepage": "https://github.com/johnteske/johnteskemusic.com#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "gh-pages": "^2.2.0",
+    "prettier": "^1.19.1"
+  }
+}
