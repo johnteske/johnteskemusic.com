@@ -21,7 +21,9 @@ module.exports = data =>
     </main>
     <footer>
       <ul>
-        ${data.contact.map(v => `<li><a href="${v.url}">${v.label}</a></li>`).join("")}
+        ${data.contact
+          .map(v => `<li><a href="${v.url}">${v.label}</a></li>`)
+          .join("")}
       </ul>
     </footer>
   </body>
