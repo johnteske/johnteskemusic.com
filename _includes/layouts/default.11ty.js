@@ -12,9 +12,9 @@ module.exports = data =>
       <a href="/"><h1>${data.site.name}</h1></a>
     </header>
     <nav>
-      <a href="${data.site.baseUrl}/performances">performances</a>
-      <a href="${data.site.baseUrl}/compositions">compositions</a>
-      <a href="${data.site.baseUrl}/about">about</a>
+      <a href="/${data.site.baseUrl}/performances">performances</a>
+      <a href="/${data.site.baseUrl}/compositions">compositions</a>
+      <a href="/${data.site.baseUrl}/about">about</a>
     </nav>
     <main>
       ${data.content}
