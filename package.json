@@ -3,7 +3,7 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "deploy": "gh-pages -d _site",
+    "deploy": "SITE_BASE_URL=johnteskemusic.com npm run build && gh-pages -d _site",
     "format": "prettier \"**/*.{js,json,html,md}\" --write"
   },
   "repository": {
