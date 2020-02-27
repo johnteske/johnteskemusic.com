@@ -1,9 +1,9 @@
 {
-    "title": "horn trio",
-    "instrumentation": {
-        "short": "horn, violin and piano"
-    },
-    "duration": {
-        "minutes": 12
-    }
+  "title": "horn trio",
+  "instrumentation": {
+    "short": "horn, violin and piano"
+  },
+  "duration": {
+    "minutes": 12
+  }
 }

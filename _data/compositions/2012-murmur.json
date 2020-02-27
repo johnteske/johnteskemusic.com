@@ -1,14 +1,14 @@
 {
-	"title": "murmur",
-	"instrumentation": {
-		"short": "chamber orchestra",
-		"long": "1,1,1,1-1,,,,,6/6/4/3/2"
-	},
-	"duration": {
-		"minutes": 45
-	},
-	"links": {
-        "audio": "https://johnteske.bandcamp.com/album/murmur",
-        "video": "https://vimeo.com/56737144"
-    }
+  "title": "murmur",
+  "instrumentation": {
+    "short": "chamber orchestra",
+    "long": "1,1,1,1-1,,,,,6/6/4/3/2"
+  },
+  "duration": {
+    "minutes": 45
+  },
+  "links": {
+    "audio": "https://johnteske.bandcamp.com/album/murmur",
+    "video": "https://vimeo.com/56737144"
+  }
 }
