@@ -1,22 +1,27 @@
 const title = data =>
   [data.title, data.project, data.site.name].filter(Boolean).join(" - ");
 
-module.exports = data =>
-  `<!DOCTYPE html>
+const _withBaseUrl = baseUrl => url =>
+  `/${baseUrl}/${url}`.replace(/\/+/g, "/");
+
+module.exports = data => {
+  const withBaseUrl = _withBaseUrl(data.site.baseUrl)
+  return `<!DOCTYPE html>
 <html>
   <head>
     <title>${title(data)}</title>
   </head>
   <body>
     <header>
-      <a href="/"><h1>${data.site.name}</h1></a>
+      <a href="${withBaseUrl("/")}"><h1>${data.site.name}</h1></a>
     </header>
     <nav>
-      <a href="/${data.site.baseUrl}/performances">performances</a>
-      <a href="/${data.site.baseUrl}/compositions">compositions</a>
-      <a href="/${data.site.baseUrl}/about">about</a>
+      <a href="${withBaseUrl("performances")}">performances</a>
+      <a href="${withBaseUrl("compositions")}">compositions</a>
+      <a href="${withBaseUrl("about")}">about</a>
     </nav>
     <main>
+      ${data.title != null ? `<header><h2>${data.title}</h2></header>` : ""}
       ${data.content}
     </main>
     <footer>
@@ -27,4 +32,4 @@ module.exports = data =>
       </ul>
     </footer>
   </body>
-</html>`;
+</html>`};
