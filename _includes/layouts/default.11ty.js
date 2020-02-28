@@ -15,7 +15,9 @@ module.exports = data => {
       html {
         font-family: 'Roboto';
       }
-
+      body {
+        max-width: 45em;
+      }
       .embed {
           position: relative;
           padding: 0;
