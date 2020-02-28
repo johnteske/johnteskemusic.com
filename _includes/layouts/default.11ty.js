@@ -15,10 +15,29 @@ module.exports = data => {
       html {
         font-family: 'Roboto';
       }
+
+      .embed {
+          position: relative;
+          padding: 0;
+          padding-bottom: 56.25%; /* 16:9 ratio*/
+          height: 0;
+          overflow: hidden;
+          margin: 1em 0;
+      }
+
+      .embed iframe,
+      .embed object,
+      .embed embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
       footer {
         border-top: 1px solid black;
       }
-    </style>
+  </style>
   </head>
   <body>
     <header>
