@@ -10,6 +10,15 @@ module.exports = data => {
 <html>
   <head>
     <title>${title(data)}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      html {
+        font-family: 'Roboto';
+      }
+      footer {
+        border-top: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <header>
