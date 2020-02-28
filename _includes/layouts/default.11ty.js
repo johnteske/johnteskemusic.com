@@ -5,7 +5,7 @@ const _withBaseUrl = baseUrl => url =>
   `/${baseUrl}/${url}`.replace(/\/+/g, "/");
 
 module.exports = data => {
-  const withBaseUrl = _withBaseUrl(data.site.baseUrl)
+  const withBaseUrl = _withBaseUrl(data.site.baseUrl);
   return `<!DOCTYPE html>
 <html>
   <head>
@@ -32,4 +32,5 @@ module.exports = data => {
       </ul>
     </footer>
   </body>
-</html>`};
+</html>`;
+};
