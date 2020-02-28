@@ -17,14 +17,11 @@ module.exports = class {
         .map(key => {
           const c = data.compositions[key];
           return `<li>
-            YEAR ;
-            <em>${c.title}</em> ;
-            ${get(c, "instrumentation.short") || ""} ;
-            ${duration(c.duration)} ;
-            ${maybe(
-              url => `<a href="${url}">audio</a>`,
-              get(c, "links.audio")
-            )} ;
+            ${c.year}
+            <em>${c.title}</em>
+            ${maybe(i => `for ${i}`, get(c, "instrumentation.short"))}
+            ${duration(c.duration)}
+            ${maybe(url => `<a href="${url}">audio</a>`, get(c, "links.audio"))}
             ${maybe(url => `<a href="${url}">video</a>`, get(c, "links.video"))}
          </li>`;
         })
