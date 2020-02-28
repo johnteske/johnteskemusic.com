@@ -1,6 +1,5 @@
 const { get } = require("lodash");
-
-const maybe = (t, v) => (v != null ? t(v) : "");
+const { maybe } = require("../util");
 
 const duration = d =>
   maybe(m => `${m}&prime;`, get(d, "minutes")) +
