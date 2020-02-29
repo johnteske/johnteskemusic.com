@@ -16,6 +16,7 @@ module.exports = data => {
         font-family: 'Roboto';
       }
       body {
+        margin: 1em;
         max-width: 45em;
       }
       .embed {
@@ -35,6 +36,9 @@ module.exports = data => {
           left: 0;
           width: 100%;
           height: 100%;
+      }
+      ul {
+        padding-inline-start: 1em;
       }
       footer {
         border-top: 1px solid black;
