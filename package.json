@@ -4,7 +4,7 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "deploy": "SITE_BASE_URL=johnteskemusic.com npm run build && gh-pages -d _site",
-    "format": "prettier \"**/*.{js,json,html,md}\" --write"
+    "format": "prettier \"**/*.{css,js,json,html,md}\" --write"
   },
   "repository": {
     "type": "git",
