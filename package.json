@@ -1,0 +1,24 @@
+{
+  "name": "johnteskemusic.com",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "deploy": "SITE_BASE_URL=johnteskemusic.com npm run build && gh-pages -d _site",
+    "format": "prettier \"**/*.{css,js,json,html,md}\" --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnteske/johnteskemusic.com.git"
+  },
+  "author": "John Teske",
+  "license": "MIT",
+  "homepage": "https://github.com/johnteske/johnteskemusic.com#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "ffdb-jtm": "git+ssh://git@github.com/johnteske/ffdb-jtm.git",
+    "gh-pages": "^2.2.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "prettier": "^1.19.1"
+  }
+}
