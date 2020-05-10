@@ -12,6 +12,7 @@ module.exports = data => {
     <title>${title(data)}</title>
     <link rel="stylesheet" href="${withBaseUrl("/assets/inter.css")}">
     <link rel="stylesheet" href="${withBaseUrl("/assets/style.css")}">
+    <link rel="icon" type="image/x-icon" href="${withBaseUrl("/assets/favicon.ico")}">
   </head>
   <body>
     <header>
