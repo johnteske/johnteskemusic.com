@@ -1,4 +1,3 @@
-const { chunk } = require("lodash");
 const moment = require("moment");
 const { maybe } = require("../util");
 
@@ -11,7 +10,7 @@ module.exports = class {
     return { title: "Performances" };
   }
   async render(data) {
-    const performances = await data.performances
+    const performances = await data.performances;
     return `<ul>
       ${performances
         .reverse()
