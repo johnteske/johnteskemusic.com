@@ -1,9 +1,9 @@
 const { catMap, maybe, title, url: _url } = require("eleventy-lib");
 
-module.exports = data => {
+module.exports = (data) => {
   const url = {
-    base: _ => _url.base(data.site.baseUrl, _),
-    asset: _ => _url.asset(data.site.baseUrl, _)
+    base: (_) => _url.base(data.site.baseUrl, _),
+    asset: (_) => _url.asset(data.site.baseUrl, _),
   };
 
   return `<!DOCTYPE html>
@@ -30,7 +30,7 @@ module.exports = data => {
     <footer>
       <ul>
         ${catMap(
-          v => `<li><a href="${v.url}">${v.label}</a></li>`,
+          (v) => `<li><a href="${v.url}">${v.label}</a></li>`,
           data.contact
         )}
       </ul>

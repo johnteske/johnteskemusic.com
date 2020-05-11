@@ -3,7 +3,7 @@ const { catMap, maybe } = require("eleventy-lib");
 
 const format = "YYYY-MM-DD";
 const now = moment().format(format);
-const date = yyyymmdd => moment(yyyymmdd).format(format);
+const date = (yyyymmdd) => moment(yyyymmdd).format(format);
 
 module.exports = class {
   data() {
@@ -12,7 +12,7 @@ module.exports = class {
   async render(data) {
     const performances = await data.performances;
     return `<ul>
-      ${catMap(p => {
+      ${catMap((p) => {
         return `<li>
             ${date(p.date)}
             ${p.title}${
