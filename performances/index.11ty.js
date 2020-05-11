@@ -1,5 +1,5 @@
 const moment = require("moment");
-const { maybe } = require("../util");
+const { catMap, maybe } = require("eleventy-lib");
 
 const format = "YYYY-MM-DD";
 const now = moment().format(format);
@@ -12,18 +12,16 @@ module.exports = class {
   async render(data) {
     const performances = await data.performances;
     return `<ul>
-      ${performances
-        .reverse()
-        .map(p => {
-          return `<li>
+      ${catMap(p => {
+        return `<li>
             ${date(p.date)}
             ${p.title}${
-            moment(p.date).isAfter(now)
-              ? `<br />${p.time}<br /><a href="${p.url}">${p.address}</a>`
-              : ""
-          }
+          moment(p.date).isAfter(now)
+            ? `<br />${p.time}<br /><a href="${p.url}">${p.address}</a>`
+            : ""
+        }
           </li>`;
-        })
-        .join("")}</ul>`;
+      }, performances.reverse())}
+        </ul>`;
   }
 };

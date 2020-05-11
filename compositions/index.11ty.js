@@ -1,5 +1,5 @@
 const { get } = require("lodash");
-const { maybe } = require("../util");
+const { maybe } = require("eleventy-lib");
 
 const duration = d =>
   maybe(m => `${m}&prime;`, get(d, "minutes")) +

@@ -15,10 +15,11 @@
   "homepage": "https://github.com/johnteske/johnteskemusic.com#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "ffdb-jtm": "git+ssh://git@github.com/johnteske/ffdb-jtm.git",
+    "eleventy-lib": "git+ssh://git@github.com/johnteske/eleventy-lib.git#master",
+    "ffdb-jtm": "git+ssh://git@github.com/johnteske/ffdb-jtm.git#master",
     "gh-pages": "^2.2.0",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.25.3",
     "prettier": "^1.19.1"
   }
 }
