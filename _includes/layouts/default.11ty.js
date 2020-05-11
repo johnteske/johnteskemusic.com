@@ -24,7 +24,6 @@ module.exports = data => {
       <a href="${url.base("about")}">about</a>
     </nav>
     <main>
-      ${data.site.baseUrl}
       ${maybe(`<header><h2>${data.title}</h2></header>`, data.title)}
       ${data.content}
     </main>
