@@ -13,7 +13,7 @@
   "author": "John Teske",
   "license": "MIT",
   "homepage": "https://github.com/johnteske/johnteskemusic.com#readme",
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "eleventy-lib": "git+ssh://git@github.com/johnteske/eleventy-lib.git#master",
     "ffdb-jtm": "git+ssh://git@github.com/johnteske/ffdb-jtm.git#master",
