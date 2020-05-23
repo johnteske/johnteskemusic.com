@@ -19,4 +19,4 @@ jobs:
     - run: npm ci
     - run: SITE_BASE_URL=johnteskemusic.com npm run build
     - run: npm test
-     - run: grep -roh '"/[a-zA-Z0-9\/\.]*"' _site/*.html | cut -d'"' -f2 | xargs -I{} echo "https://johnteske.github.io{}" | sort | uniq | npx audit-urls
+    - run: grep -roh '"/[a-zA-Z0-9\/\.]*"' _site/*.html | cut -d'"' -f2 | xargs -I{} echo "https://johnteske.github.io{}" | sort | uniq | npx audit-urls
