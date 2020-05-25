@@ -5,6 +5,13 @@ const duration = (d) =>
   maybe((m) => `${m}&prime;`, get(d, "minutes")) +
   maybe((m) => `${m}&Prime;`, get(d, "seconds"));
 
+const recordingLink = (url) => {
+  let text = "link";
+  if (url.includes("spotify")) text = "spotify";
+  if (url.includes("bandcamp")) text = "bandcamp";
+  return `<a href="${url}">${text}</a>`;
+};
+
 module.exports = class {
   data() {
     return { title: "Compositions" };
@@ -30,6 +37,19 @@ module.exports = class {
             )}
          </li>`;
         })
-        .join("")}</ul>`;
+        .join("")}</ul>
+    <h2>Recordings</h2>
+    <ul>${data.recordings
+      .sort((a, b) => {
+        return a.releaseDate - b.releasDate;
+      })
+      .reverse()
+      .map(
+        (r) =>
+          `<li>${r.releaseDate} <em>${r.title}</em> ${r.urls
+            .map(recordingLink)
+            .join(" ")}</li>`
+      )
+      .join("")}</ul>`;
   }
 };
