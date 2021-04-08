@@ -14,7 +14,7 @@
   "license": "MIT",
   "homepage": "https://github.com/johnteske/johnteskemusic.com#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.12.1",
     "eleventy-lib": "git+https://github.com/johnteske/eleventy-lib.git#master",
     "ffdb-jtm": "git+https://github.com/johnteske/ffdb-jtm.git#master",
     "gh-pages": "^2.2.0",
